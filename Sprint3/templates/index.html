@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatBot de Amira Rashid</title>
+    <style>
+        body { background-color: #1a1125; color: rgb(208, 223, 240); font-family: sans-serif; text-align: center; }
+        .chat-box { width: 50%; margin: auto; background: #cecfec; padding: 20px; border-radius: 10px; border: 1px solid #ffd700; height: 400px; overflow-y: scroll; }
+        .user-msg { color: #2a302f; text-align: right; margin: 5px; font-weight: bold }
+        .bot-msg { color: #421e4b; text-align: left; margin: 5px; font-weight: bold }
+        h1 {
+            font-family: Georgia, serif;
+        }
+        h2 {
+            font-family: Georgia, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amira Rashid:</h1>
+    <h2>ChatBot Médium Astral</h2>
+    <div class="chat-box">
+        {% for message in chat %}
+            <p class="{{ 'user-msg' if 'Usuario:' in message else 'bot-msg' }}">{{ message }}</p>
+        {% endfor %}
+    </div>
+    <div id="final-del-chat"></div>
+    <form method="POST" style="margin-top: 20px;">
+        <input type="text" name="question" autofocus placeholder="Dime tu signo..." required style="width: 40%; padding: 10px;">
+        <button type="submit" style="padding: 10px; cursor: pointer;">Consultar</button>
+    </form>
+    <script>
+    window.scrollTo(0, document.body.scrollHeight);
+    </script>
+</body>
+</html>
